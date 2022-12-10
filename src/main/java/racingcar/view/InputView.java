@@ -31,5 +31,11 @@ public class InputView {
                 .collect(Collectors.toList());
     }
 
+    public int readTryCount() {
+        System.out.println(InputPhrase.TRY.get());
+        String input = Console.readLine().trim();
+        ViewValidator.validateTryCount(input);
+        return Integer.parseInt(input);
+
     }
 }
