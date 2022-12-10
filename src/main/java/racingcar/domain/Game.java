@@ -19,6 +19,12 @@ public class Game {
         cars.put(car.getName(), car);
     }
 
+    public void controlCar(String name, boolean canMove) {
+        if (canMove) {
+            cars.get(name).move();
+        }
+    }
+
     public Set<String> getAllCars() {
         return cars.keySet();
     }
