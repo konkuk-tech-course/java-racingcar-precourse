@@ -32,7 +32,11 @@
     - [x] 우승자 출력 기능
 
 ## Controller
-- GameController
+- [ ] GameController
+    - [ ] 자동차 생성 기능
+    - [ ] 게임 생성 기능
+    - [ ] 게임 진행 기능
+    - [ ] 게임 종료 기능
 
 
 
