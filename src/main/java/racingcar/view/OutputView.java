@@ -15,6 +15,10 @@ public class OutputView {
         return OutputView.InstanceHolder.INSTANCE;
     }
 
+    public void printMessage(String message) {
+        System.out.println(message);
+    }
+
     public void printResult(Map<String, Integer> results) {
         results.entrySet().stream()
                 .map(this::styleResult)
@@ -42,7 +46,7 @@ public class OutputView {
         );
     }
 
-    public void printErrorMessage(String errorMessage) {
-        System.out.println(errorMessage);
+    public void insertLineBreak() {
+        System.out.println();
     }
 }

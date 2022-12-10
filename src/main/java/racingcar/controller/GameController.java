@@ -30,7 +30,7 @@ public class GameController {
         try {
             return inputView.readNames();
         } catch (IllegalArgumentException e) {
-            outputView.printErrorMessage(e.getMessage());
+            outputView.printMessage(e.getMessage());
             return requestNames();
         }
     }
@@ -39,7 +39,7 @@ public class GameController {
         try {
             return inputView.readTryCount();
         } catch (IllegalArgumentException e) {
-            outputView.printErrorMessage(e.getMessage());
+            outputView.printMessage(e.getMessage());
             return requestTryCount();
         }
     }
@@ -48,6 +48,7 @@ public class GameController {
         while(game.hasRemainingMoves()) {
             gameService.playRound(game);
             outputView.printResult(game.createGameStatus());
+            outputView.insertLineBreak();
         }
         finish(game);
     }
