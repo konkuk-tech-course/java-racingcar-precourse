@@ -2,7 +2,7 @@ package racingcar.domain;
 
 import constant.Constants;
 
-public class Car {
+public class Car implements Comparable<Car> {
     private static final int UNIT_DISTANCE = 1;
 
     private String name;
@@ -22,5 +22,10 @@ public class Car {
 
     public int getPosition() {
         return position;
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        return o.getPosition() - this.position;
     }
 }
