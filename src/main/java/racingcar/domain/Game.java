@@ -43,6 +43,15 @@ public class Game {
                 .orElse(Constants.ERROR_VALUE.get());
     }
 
+    public Map<String, Integer> createGameStatus() {
+        Map<String, Integer> gameStatus = new HashMap<>();
+        cars.forEach((key, value) -> gameStatus.put(
+                key,
+                value.getPosition()
+        ));
+        return gameStatus;
+    }
+
     public Set<String> getAllCars() {
         return cars.keySet();
     }
