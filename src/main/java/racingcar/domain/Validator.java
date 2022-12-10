@@ -23,13 +23,13 @@ public class Validator {
     }
 
     private void validateNameLength(List<String> cars) {
-        if (cars.stream().filter(n -> n.length() > NAME_LENGTH_MAX).count() > 0) {
+        if (cars.stream().filter(carName -> carName.length() > NAME_LENGTH_MAX).count() > 0) {
             throw new IllegalArgumentException(ExceptionMessage.ERROR_NAME_LENGTH.message());
         }
     }
 
     public long validateInputTrial(String readTrial) {
-        int trial = 0;
+        long trial;
         try {
             trial = Integer.parseInt(readTrial);
         } catch (Exception e) {

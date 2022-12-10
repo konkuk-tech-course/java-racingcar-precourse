@@ -20,7 +20,7 @@ public class RacingController {
     }
 
 
-    public void run() {
+    public void activate() {
         List<Car> cars = validateCarName();
         long trial = validateInputTrial();
         Game game = new Game(cars, trial, outputView);

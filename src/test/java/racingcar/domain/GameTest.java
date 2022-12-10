@@ -16,11 +16,11 @@ public class GameTest {
     Car carWithMax;
 
     @BeforeEach
-    void initCars(){
+    void initCars() {
         inputCars = List.of("woni", "pobi", "jun");
         cars = inputCars.stream().map(s -> new Car(s)).collect(Collectors.toList());
-        for(int i=0; i<4; i++){
-            for(int j=0; j<cars.size(); j++){
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < cars.size(); j++) {
                 cars.get(j).MoveOrStopAccordingToRandomNumber();
             }
         }
@@ -35,20 +35,17 @@ public class GameTest {
     }
 
 
-
     @Test
     @DisplayName("공동 우승자에 대하여 찾을 수 있는지 테스트")
-    void findWinners(){
+    void findWinners() {
         List<String> winningMembers = new ArrayList<>();
-        for(int index=0; index<cars.size(); index++){
-            if(cars.get(index).getPosition() == carWithMax.getPosition()){
+        for (int index = 0; index < cars.size(); index++) {
+            if (cars.get(index).getPosition() == carWithMax.getPosition()) {
                 winningMembers.add(cars.get(index).getName());
             }
         }
         Assertions.assertThat(winningMembers.size()).isGreaterThan(0);
     }
-
-
 
 
 }

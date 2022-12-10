@@ -1,6 +1,5 @@
 package racingcar.domain.constant;
 
-import java.util.List;
 
 public enum ExceptionMessage {
 
@@ -8,7 +7,7 @@ public enum ExceptionMessage {
     ERROR_INPUT_TRIAL("[ERROR] 시도 횟수는 숫자여야 한다.");
 
 
-    private String exceptionMessage;
+    private final String exceptionMessage;
 
     ExceptionMessage(String exceptionMessage) {
         this.exceptionMessage = exceptionMessage;
