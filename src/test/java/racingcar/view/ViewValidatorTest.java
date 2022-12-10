@@ -21,4 +21,12 @@ public class ViewValidatorTest {
                 .hasMessageContaining("[ERROR]")
                 .hasMessageContaining("5자 이하");
     }
+
+    @Test
+    void Invalid_Value_For_TryCount_Test() {
+        assertThatThrownBy(() -> ViewValidator.validateTryCount("df2e"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("[ERROR]")
+                .hasMessageContaining("숫자만");
+    }
 }
