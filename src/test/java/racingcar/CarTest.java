@@ -21,13 +21,24 @@ class CarTest {
     }
 
     @Test
-    void 전진_테스트(){
+    void 전진하지않는경우_테스트(){
         final int startRange = 0;
         final int notProcessEndRange = 4;
         final int ZERO = 0;
         for(int notProcessNumber = startRange; notProcessNumber < notProcessEndRange; notProcessNumber++){
             car.processStart(notProcessNumber);
-            Assertions.assertThat(car.getPosition()).isEqualTo(ZERO);
         }
+        Assertions.assertThat(car.getPosition()).isEqualTo(ZERO);
+    }
+
+    @Test
+    void 전진하는경우_테스트(){
+        final int startRange = 4;
+        final int endRange = 9;
+        final int expectedResult = endRange - startRange + 1;
+        for(int processNumber = startRange; processNumber <= endRange; processNumber++){
+            car.processStart(processNumber);
+        }
+        Assertions.assertThat(car.getPosition()).isEqualTo(expectedResult);
     }
 }
