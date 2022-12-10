@@ -25,9 +25,14 @@ public class OutputView {
 
 
     public void printWinningMember(List<String> winningMember) {
-        String collect = winningMember.stream().collect(Collectors.joining(","));
+        String winningMembers = getWinningMembers(winningMember);
         System.out.print("최종 우승자 : ");
-        System.out.println(collect);
+        System.out.println(winningMembers);
+    }
+
+    private static String getWinningMembers(List<String> winningMember) {
+        String winningMembers = winningMember.stream().collect(Collectors.joining(","));
+        return winningMembers;
     }
 
 }

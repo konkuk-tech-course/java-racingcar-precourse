@@ -41,15 +41,15 @@ public class RacingController {
     }
 
     private List<Car> validateCarName() {
-        List<Car> carList= new ArrayList<>();
+        List<Car> cars= new ArrayList<>();
         try{
             outputView.printInputCarName();
-            carList = validator.validateCarName(inputView.readCarName());
+            cars = validator.validateCarName(inputView.readCarName());
         }catch (IllegalArgumentException e){
             outputView.printException(e.getMessage());
             return validateCarName();
         }
-        return carList;
+        return cars;
     }
 
 
