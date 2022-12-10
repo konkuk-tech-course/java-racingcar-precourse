@@ -1,6 +1,7 @@
 package racingcar.service;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.domain.Car;
 import racingcar.domain.Game;
 import racingcar.service.constant.MoveConditionProperties;
 
@@ -16,6 +17,12 @@ public class GameService {
 
     public static GameService getInstance() {
         return InstanceHolder.INSTANCE;
+    }
+
+    public Game createGame(List<String> names, int tryCount) {
+        Game game = new Game(tryCount);
+        names.forEach(name -> game.addCar(new Car(name)));
+        return game;
     }
 
     public void playRound(Game game) {
