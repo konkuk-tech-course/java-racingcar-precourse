@@ -3,14 +3,13 @@ package racingcar.domain;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import racingcar.Car;
 import racingcar.view.OutputView;
 
 public class Game {
-    OutputView outputView;
-    List<Car> cars;
-    List<String> winningMember;
-    int trial;
+    private OutputView outputView;
+    private List<Car> cars;
+    private List<String> winningMember;
+    private int trial;
     public Game(List<Car> cars, int trial, OutputView outputView) {
         this.cars=cars;
         this.trial=trial;

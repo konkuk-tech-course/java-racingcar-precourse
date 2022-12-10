@@ -2,7 +2,7 @@ package racingcar.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import racingcar.Car;
+import racingcar.domain.Car;
 import racingcar.domain.Game;
 import racingcar.domain.Validator;
 import racingcar.view.InputView;
@@ -10,9 +10,9 @@ import racingcar.view.OutputView;
 
 public class RacingController {
 
-    InputView inputView;
-    OutputView outputView;
-    Validator validator;
+    private InputView inputView;
+    private OutputView outputView;
+    private Validator validator;
 
     public RacingController(InputView inputView, OutputView outputView) {
         this.inputView=inputView;
