@@ -1,7 +1,9 @@
 package racingcar.view;
 
+import racingcar.view.constant.OutputPhrase;
 import racingcar.view.constant.OutputStyles;
 
+import java.util.List;
 import java.util.Map;
 
 public class OutputView {
@@ -27,7 +29,16 @@ public class OutputView {
         );
     }
 
-    public void printWinners() {
+    public void printWinners(List<String> winners) {
+        System.out.println(
+                String.format(OutputPhrase.WINNER.get(), styleWinners(winners))
+        );
+    }
 
+    private String styleWinners(List<String> winners) {
+        return String.join(
+                OutputStyles.WINNER_DELIMITER.get(),
+                winners
+        );
     }
 }
