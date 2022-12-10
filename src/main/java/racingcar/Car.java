@@ -23,5 +23,8 @@ public class Car {
         }
     }
 
+    public void printPosition(OutputView outputView) {
+        outputView.printPosition(this.name, this.trace);
+    }
 
 }

@@ -19,6 +19,7 @@ public class Game {
         for(int i =0; i < trial; i++){
             for(int j = 0; j<cars.size(); j++){
                 cars.get(j).carSetting();
+                cars.get(j).printPosition(outputView);
             }
             System.out.println();
         }
