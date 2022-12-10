@@ -14,6 +14,11 @@ public class Game {
         moveCount = Constants.INIT_VALUE.get();
         cars = new HashMap<>();
     }
+
+    public void addCar(Car car) {
+        cars.put(car.getName(), car);
+    }
+
     public Set<String> getAllCars() {
         return cars.keySet();
     }
