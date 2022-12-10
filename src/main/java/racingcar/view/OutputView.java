@@ -41,4 +41,8 @@ public class OutputView {
                 winners
         );
     }
+
+    public void printErrorMessage(String errorMessage) {
+        System.out.println(errorMessage);
+    }
 }
