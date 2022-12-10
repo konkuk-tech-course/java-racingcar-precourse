@@ -24,11 +24,33 @@ class ApplicationTest extends NsTest {
         );
     }
 
+
+    @Test
+    void 전진_정지_공동우승() {
+        assertRandomNumberInRangeTest(
+            () -> {
+                run("pobi,woni", "3");
+                assertThat(output()).contains("pobi : ---", "woni : ---", "최종 우승자 : pobi,woni");
+            },
+            MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD
+        );
+    }
+
     @Test
     void 이름에_대한_예외_처리() {
         assertSimpleTest(
             () -> {
                 runException("pobi,javaji");
+                assertThat(output()).contains(ERROR_MESSAGE);
+            }
+        );
+    }
+
+    @Test
+    void 횟수_입력에대한_예외_처리() {
+        assertSimpleTest(
+            () -> {
+                runException("pobi,javaj", "중요한건 꺾이지 않는 마음");
                 assertThat(output()).contains(ERROR_MESSAGE);
             }
         );
