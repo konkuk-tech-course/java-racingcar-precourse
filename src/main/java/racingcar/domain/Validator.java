@@ -7,16 +7,13 @@ import racingcar.Car;
 
 public class Validator {
 
-    public String validateCarName(String readCarName) {
+    public List<Car> validateCarName(String readCarName) {
         List<String> split = List.of(readCarName.split(","));
-        if(readCarName.chars().filter(n -> n==',').count() != split.size()-1){
-            throw new IllegalArgumentException("[ERROR] 구분자로는 , 가 와야 합니다.");
-        }
         if(split.stream().filter(n -> n.length() > 5).count() > 0){
             throw new IllegalArgumentException("[ERROR] 자동차에 대한 이름의 길이는 5 이하여야 합니다.");
         }
         List<Car> collect = split.stream().map(s -> new Car(s)).collect(Collectors.toList());
 
-
+        return collect;
     }
 }
