@@ -16,4 +16,14 @@ public class Validator {
 
         return collect;
     }
+
+    public int validateInputTrial(String readTrial) {
+        int trial=0;
+        try{
+            trial = Integer.parseInt(readTrial);
+        }catch (Exception e){
+            throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 한다.");
+        }
+        return trial;
+    }
 }
