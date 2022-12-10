@@ -49,7 +49,7 @@ public class Game {
                 key,
                 value.getPosition()
         ));
-        return gameStatus;
+        return Collections.unmodifiableMap(gameStatus);
     }
 
     public boolean hasRemainingMoves() {
