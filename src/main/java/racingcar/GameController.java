@@ -3,6 +3,7 @@ package racingcar;
 import camp.nextstep.edu.missionutils.Console;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,10 +26,7 @@ public class GameController {
     public List<Car> inputCarNames(){
         String inputString = Console.readLine();
         String[] carNames = getCarNames(inputString);
-        List<Car> cars = new ArrayList<>();
-        for(String carName : carNames){
-            cars.add(new Car(carName));
-        }
+        List<Car> cars = Arrays.stream(carNames).map(carName -> new Car(carName)).collect(Collectors.toList());
         return cars;
     }
 
