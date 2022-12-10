@@ -52,6 +52,10 @@ public class Game {
         return gameStatus;
     }
 
+    public boolean hasRemainingMoves() {
+        return remainingMoves > Constants.INIT_VALUE.get();
+    }
+
     public Set<String> getAllCars() {
         return cars.keySet();
     }
