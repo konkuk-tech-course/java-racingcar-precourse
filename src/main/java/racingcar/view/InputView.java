@@ -36,6 +36,5 @@ public class InputView {
         String input = Console.readLine().trim();
         ViewValidator.validateTryCount(input);
         return Integer.parseInt(input);
-
     }
 }
