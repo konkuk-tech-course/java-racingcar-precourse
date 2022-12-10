@@ -8,6 +8,10 @@ public class Car {
     private int position = 0;
     private String trace ="";
 
+    public String getName() {
+        return name;
+    }
+
     public Car(String name) {
         this.name = name;
     }
@@ -17,14 +21,17 @@ public class Car {
 
     public void carSetting(){
         int i = Randoms.pickNumberInRange(0, 9);
-        if(i>4){
+        if(i>=4){
             this.position++;
             trace +="-";
         }
     }
 
     public void printPosition(OutputView outputView) {
-        outputView.printPosition(this.name, this.trace);
+        outputView.printTrace(this.name, this.trace);
     }
 
+    public int getPosition() {
+        return position;
+    }
 }

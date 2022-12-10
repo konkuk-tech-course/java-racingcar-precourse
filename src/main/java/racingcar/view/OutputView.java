@@ -1,5 +1,8 @@
 package racingcar.view;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class OutputView {
 
 
@@ -15,7 +18,9 @@ public class OutputView {
         System.out.println("시도할 회수는 몇회인가요?");
     }
 
-    public void printPosition(String name, String trace) {
+    public void printTrace(String name, String trace) {
         System.out.println(name + " : " + trace);
     }
+
+
 }
