@@ -1,7 +1,8 @@
 package constant;
 
 public enum Constants {
-    INIT_VALUE(0);
+    INIT_VALUE(0),
+    ERROR_VALUE(-1);
 
     private final int value;
 
