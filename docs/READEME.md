@@ -4,7 +4,11 @@
 - [x] Car
     - [x] 필드, 생성자, getter 구현
     - [x] 전진 메서드 구현
-- Game 
+- [ ] Game 
+    - [ ] 필드, 생성자, getter 구현
+    - [ ] control 기능
+    - [ ] 우승자 제공 기능
+    - [ ] 게임 상황 Map 반환 기능
 
 ## Service
 - GameService
