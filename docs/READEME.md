@@ -18,6 +18,7 @@
     - [x] playRound 기능
     - [x] 게임 상황 반환 기능
     - [x] 게임 생성 기능
+    - [x] 게임 play 기능
 
 ## View
 - [x] InputView
@@ -33,12 +34,13 @@
     - [x] 우승자 출력 기능
 
 ## Controller
-- [ ] GameController
-    - [ ] 게임 생성 기능
-    - [ ] 게임 진행 기능
-    - [ ] 게임 종료 기능
+- [x] GameController
+    - [x] 게임 생성 기능
+    - [x] 게임 진행 기능
+    - [x] 게임 종료 기능
 
-
+## main
+- [x] 메인 메서드 작성
 
 
 
