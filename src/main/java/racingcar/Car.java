@@ -8,7 +8,6 @@ public class Car {
         this.name = name;
     }
 
-sdfsd
 
     // 추가 기능 구현
 }
