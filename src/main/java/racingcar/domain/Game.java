@@ -3,6 +3,7 @@ package racingcar.domain;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 import racingcar.view.OutputView;
 
 public class Game {
@@ -18,17 +19,18 @@ public class Game {
     }
 
     public void play(){
+
         for(int moveCount =0; moveCount < trial; moveCount++){
             carMove();
         }
-        Car carWithMax = findMaxCar();
-        findWinners(carWithMax);
+        Car maximumMovedCar = findMaxCar();
+        findWinners(maximumMovedCar);
         outputView.printWinningMember(winningMembers);
     }
 
-    private void findWinners(Car carWithMax) {
+    private void findWinners(Car maximumMovedCar) {
         for(int index=0; index<cars.size(); index++){
-            if(cars.get(index).getPosition() == carWithMax.getPosition()){
+            if(cars.get(index).getPosition() == maximumMovedCar.getPosition()){
                 winningMembers.add(cars.get(index).getName());
             }
         }

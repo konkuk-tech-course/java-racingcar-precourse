@@ -17,7 +17,7 @@
 - (예외 발생 시) `IllegalArgumentException`을 활용하여서 입력받은 곳부터 다시 진행
 
 - [ ] 기능 구현 이후 할 작업
-  - [ ] domain 부분 테스트
+  - [X] domain 부분 테스트
     - [X] Validator 테스트
     - [X] Game 테스트
     - [X] 예외 처리 확인

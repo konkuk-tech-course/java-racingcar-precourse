@@ -8,8 +8,8 @@ public class Car {
 
 
     private final String name;
-    private String trace=CarConstant.INIT_TRACE.getState();
-    private int position = 0;
+    private String trace=CarConstant.INIT_TRACE.message();
+    private int position = CarConstant.INIT_POSITION.stateNumber();
 
 
     public Car(String name) {
@@ -17,10 +17,10 @@ public class Car {
     }
 
     public void MoveOrStopAccordingToRandomNumber(){
-        int number = Randoms.pickNumberInRange(CarConstant.START_RANGE.getStateNumber(), CarConstant.END_RANGE.getStateNumber());
-        if(number>=CarConstant.CAPABLE_MOVE_NUMBER.getStateNumber()){
+        int number = Randoms.pickNumberInRange(CarConstant.START_RANGE.stateNumber(), CarConstant.END_RANGE.stateNumber());
+        if(number>=CarConstant.CAPABLE_MOVE_NUMBER.stateNumber()){
             this.position++;
-            this.trace +=CarConstant.MOVE.getState();
+            this.trace +=CarConstant.MOVE.message();
         }
     }
 

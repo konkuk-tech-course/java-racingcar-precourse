@@ -8,7 +8,9 @@ public enum CarConstant {
     INIT_TRACE(""),
     CAPABLE_MOVE_NUMBER(4),
     START_RANGE(0),
-    END_RANGE(9);
+    END_RANGE(9),
+    INIT_POSITION(0)
+    ;
 
 
     private String state;
@@ -22,11 +24,11 @@ public enum CarConstant {
         this.stateNumber = stateNumber;
     }
 
-    public int getStateNumber() {
+    public int stateNumber() {
         return stateNumber;
     }
 
-    public String getState() {
+    public String message() {
         return state;
     }
 }
