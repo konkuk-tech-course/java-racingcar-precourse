@@ -12,7 +12,7 @@ public class Validator {
             throw new IllegalArgumentException(ERROR + "문자만 입력할 수 있습니다");
         }
         if (input.length() > 5) {
-            throw new IllegalArgumentException(ERROR + "이름은 5자 이하만 입력 가능합니다");
+            throw new IllegalArgumentException(ERROR + " 이름은 5자 이하만 입력 가능합니다");
         }
     }
     public static void validateInputTryNumber(int count) {
