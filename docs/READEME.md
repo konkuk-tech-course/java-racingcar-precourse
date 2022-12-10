@@ -27,7 +27,9 @@
     - [x] 시도 횟수 입력 기능
         - [x] 숫자 입력 검증 기능
         - [x] 시도 횟수 입력 메서드 작성
-- OutputView
+- [x] OutputView
+    - [x] printResult 기능
+    - [x] 우승자 출력 기능
 
 ## Controller
 - GameController
