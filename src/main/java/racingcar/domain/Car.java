@@ -6,22 +6,21 @@ public class Car {
     private static final int UNIT_DISTANCE = 1;
 
     private String name;
-    private int distance;
+    private int position = Constants.INIT_VALUE.get();
 
     public Car(String name) {
         this.name = name;
-        this.distance = Constants.INIT_VALUE.get();
     }
 
     public void move() {
-        distance += UNIT_DISTANCE;
+        position += UNIT_DISTANCE;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getDistance() {
-        return distance;
+    public int getPosition() {
+        return position;
     }
 }
