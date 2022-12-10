@@ -21,7 +21,7 @@ public class GameTest {
         cars = inputCars.stream().map(s -> new Car(s)).collect(Collectors.toList());
         for(int i=0; i<4; i++){
             for(int j=0; j<cars.size(); j++){
-                cars.get(j).carMovingProcess();
+                cars.get(j).MoveOrStopAccordingToRandomNumber();
             }
         }
         setCarWithMax();

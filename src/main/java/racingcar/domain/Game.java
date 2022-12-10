@@ -8,28 +8,28 @@ import racingcar.view.OutputView;
 public class Game {
     private OutputView outputView;
     private List<Car> cars;
-    private List<String> winningMember;
+    private List<String> winningMembers;
     private int trial;
     public Game(List<Car> cars, int trial, OutputView outputView) {
         this.cars=cars;
         this.trial=trial;
         this.outputView = outputView;
-        this.winningMember=new ArrayList<>();
+        this.winningMembers =new ArrayList<>();
     }
 
     public void play(){
-        for(int i =0; i < trial; i++){
-            carMovingCheckProcess();
+        for(int moveCount =0; moveCount < trial; moveCount++){
+            carMove();
         }
         Car carWithMax = findMaxCar();
         findWinners(carWithMax);
-        outputView.printWinningMember(winningMember);
+        outputView.printWinningMember(winningMembers);
     }
 
     private void findWinners(Car carWithMax) {
         for(int index=0; index<cars.size(); index++){
             if(cars.get(index).getPosition() == carWithMax.getPosition()){
-                winningMember.add(cars.get(index).getName());
+                winningMembers.add(cars.get(index).getName());
             }
         }
     }
@@ -42,10 +42,10 @@ public class Game {
         return carWithMax;
     }
 
-    private void carMovingCheckProcess() {
+    private void carMove() {
         for(int index = 0; index<cars.size(); index++){
-            cars.get(index).carMovingProcess();
-            cars.get(index).printPosition(outputView);
+            cars.get(index).MoveOrStopAccordingToRandomNumber();
+            cars.get(index).printUntilNowPosition(outputView);
         }
         System.out.println();
     }
