@@ -36,4 +36,7 @@ public class OutputView {
         return winningMembers;
     }
 
+    public void printResultAnnounce() {
+        System.out.println(ViewConstant.RESULT_ANNOUNCE.message());
+    }
 }

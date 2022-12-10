@@ -9,31 +9,32 @@ public class Game {
 
     private OutputView outputView;
     private List<Car> cars;
-    private List<String> winningMembers;
     private long trial;
 
     public Game(List<Car> cars, long trial, OutputView outputView) {
         this.cars = cars;
         this.trial = trial;
         this.outputView = outputView;
-        this.winningMembers = new ArrayList<>();
     }
 
     public void play() {
+        outputView.printResultAnnounce();
         for (long moveCount = 0; moveCount < trial; moveCount++) {
             carMove();
+            System.out.println();
         }
         Car maximumMovedCar = findMaxMovedCar();
-        findWinners(maximumMovedCar);
-        outputView.printWinningMember(winningMembers);
+        outputView.printWinningMember(findWinners(maximumMovedCar));
     }
 
-    private void findWinners(Car maximumMovedCar) {
+    private List<String> findWinners(Car maximumMovedCar) {
+        List<String> winningMembers = new ArrayList<>();
         for (int index = 0; index < cars.size(); index++) {
             if (cars.get(index).getPosition() == maximumMovedCar.getPosition()) {
                 winningMembers.add(cars.get(index).getName());
             }
         }
+        return winningMembers;
     }
 
     private Car findMaxMovedCar() {
@@ -49,7 +50,6 @@ public class Game {
             cars.get(index).MoveOrStopAccordingToRandomNumber();
             cars.get(index).printUntilNowPosition(outputView);
         }
-        System.out.println();
     }
 
 

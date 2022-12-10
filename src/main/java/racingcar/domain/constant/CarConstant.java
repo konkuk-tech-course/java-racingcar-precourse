@@ -11,7 +11,6 @@ public enum CarConstant {
     END_RANGE(9),
     INIT_POSITION(0);
 
-
     private String state;
     private int stateNumber;
 

@@ -16,9 +16,9 @@ public class Car {
     }
 
     public void MoveOrStopAccordingToRandomNumber() {
-        int number = Randoms.pickNumberInRange(CarConstant.START_RANGE.stateNumber(),
+        int randomMoveNumber = Randoms.pickNumberInRange(CarConstant.START_RANGE.stateNumber(),
             CarConstant.END_RANGE.stateNumber());
-        if (number >= CarConstant.CAPABLE_MOVE_NUMBER.stateNumber()) {
+        if (randomMoveNumber >= CarConstant.CAPABLE_MOVE_NUMBER.stateNumber()) {
             this.position++;
             this.trace += CarConstant.MOVE.message();
         }

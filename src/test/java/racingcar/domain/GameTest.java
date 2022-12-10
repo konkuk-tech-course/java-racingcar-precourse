@@ -13,7 +13,7 @@ public class GameTest {
 
     List<String> inputCars = new ArrayList<>();
     List<Car> cars = new ArrayList<>();
-    Car carWithMax;
+    Car maximumMovedCar;
 
     @BeforeEach
     void initCars() {
@@ -29,7 +29,7 @@ public class GameTest {
 
     private void setCarWithMax() {
         Comparator<Car> comparatorByTrace = Comparator.comparingInt(car -> car.getPosition());
-        carWithMax = cars.stream()
+        maximumMovedCar = cars.stream()
             .max(comparatorByTrace)
             .orElseThrow(IllegalArgumentException::new);
     }
@@ -40,7 +40,7 @@ public class GameTest {
     void findWinners() {
         List<String> winningMembers = new ArrayList<>();
         for (int index = 0; index < cars.size(); index++) {
-            if (cars.get(index).getPosition() == carWithMax.getPosition()) {
+            if (cars.get(index).getPosition() == maximumMovedCar.getPosition()) {
                 winningMembers.add(cars.get(index).getName());
             }
         }
