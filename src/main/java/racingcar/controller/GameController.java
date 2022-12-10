@@ -4,6 +4,7 @@ import racingcar.domain.Game;
 import racingcar.service.GameService;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
+import racingcar.view.constant.OutputPhrase;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class GameController {
     public Game createGame() {
         List<String> names = requestNames();
         int tryCount = requestTryCount();
+        outputView.insertLineBreak();
         return gameService.createGame(names, tryCount);
     }
 
@@ -45,6 +47,7 @@ public class GameController {
     }
 
     public void operate(Game game) {
+        outputView.printMessage(OutputPhrase.RESULT_TITLE.get());
         while(game.hasRemainingMoves()) {
             gameService.playRound(game);
             outputView.printResult(game.createGameStatus());
