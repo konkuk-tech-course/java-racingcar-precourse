@@ -46,6 +46,16 @@ class ApplicationTest extends NsTest {
         );
     }
 
+    @Test
+    void 횟수_입력에대한_예외_처리() {
+        assertSimpleTest(
+            () -> {
+                runException("pobi,javaj", "중요한건 꺾이지 않는 마음");
+                assertThat(output()).contains(ERROR_MESSAGE);
+            }
+        );
+    }
+
     @Override
     public void runMain() {
         Application.main(new String[]{});
