@@ -2,6 +2,7 @@ package racingcar.service;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import racingcar.domain.Game;
@@ -29,6 +30,7 @@ public class GameServiceTest {
         gameService.playRound(game);
     }
 
+    @DisplayName("랜덤값이 4이상일 때만 움직인다.")
     @Test
     void playRoundTest() {
         Map<String, Integer> results = Map.of(
