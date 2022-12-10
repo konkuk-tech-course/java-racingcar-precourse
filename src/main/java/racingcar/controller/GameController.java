@@ -52,7 +52,7 @@ public class GameController {
         finish(game);
     }
 
-    public void finish(Game game) {
+    private void finish(Game game) {
         outputView.printWinners(game.findLeadingCars());
     }
 }
