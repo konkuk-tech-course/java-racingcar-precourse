@@ -3,6 +3,7 @@ package racingcar.controller;
 import java.util.ArrayList;
 import java.util.List;
 import racingcar.Car;
+import racingcar.domain.Game;
 import racingcar.domain.Validator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
@@ -23,6 +24,8 @@ public class RacingController {
     public void run(){
         List<Car> cars = validateCarName();
         int trial = validateInputTrial();
+        Game game = new Game(cars,trial,outputView);
+        game.play();
     }
 
     private int validateInputTrial() {
