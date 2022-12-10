@@ -14,7 +14,7 @@ public class Car {
 
     // 추가 기능 구현
 
-    public void carSetting(){
+    public void carMovingProcess(){
         int i = Randoms.pickNumberInRange(0, 9);
         if(i>=4){
             this.position++;

@@ -19,7 +19,7 @@ public class Game {
 
     public void play(){
         for(int i =0; i < trial; i++){
-            carSetting();
+            carMovingCheckProcess();
         }
         Car carWithMax = findMaxCar();
         findWinners(carWithMax);
@@ -42,9 +42,9 @@ public class Game {
         return carWithMax;
     }
 
-    private void carSetting() {
+    private void carMovingCheckProcess() {
         for(int index = 0; index<cars.size(); index++){
-            cars.get(index).carSetting();
+            cars.get(index).carMovingProcess();
             cars.get(index).printPosition(outputView);
         }
         System.out.println();
