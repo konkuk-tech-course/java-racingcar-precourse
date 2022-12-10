@@ -5,6 +5,8 @@ import racingcar.view.OutputView;
 
 public class Car {
     private final String name;
+
+    private final String MOVE="-";
     private int position = 0;
     private String trace ="";
 
@@ -15,10 +17,10 @@ public class Car {
     // 추가 기능 구현
 
     public void carMovingProcess(){
-        int i = Randoms.pickNumberInRange(0, 9);
-        if(i>=4){
+        int number = Randoms.pickNumberInRange(0, 9);
+        if(number>=4){
             this.position++;
-            trace +="-";
+            this.trace +=MOVE;
         }
     }
 

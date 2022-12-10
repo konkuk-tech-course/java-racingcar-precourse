@@ -37,6 +37,7 @@ public class GameTest {
 
 
     @Test
+    @DisplayName("공동 우승자에 대하여 찾을 수 있는지 테스트")
     void findWinners(){
         List<String> winningMembers = new ArrayList<>();
         for(int index=0; index<cars.size(); index++){
