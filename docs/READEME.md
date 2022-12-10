@@ -1,9 +1,9 @@
 # 기능 목록
 
 ## domain
-- [ ] Car
-    - [ ] 필드, 생성자, getter 구현
-    - [ ] 전진 메서드 구현
+- [x] Car
+    - [x] 필드, 생성자, getter 구현
+    - [x] 전진 메서드 구현
 - Game 
 
 ## Service
