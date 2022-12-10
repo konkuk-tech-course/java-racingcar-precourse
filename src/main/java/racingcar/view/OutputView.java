@@ -12,7 +12,7 @@ public class OutputView {
         System.out.println(message);
     }
 
-    public void printInputCarName(){
+    public void printInputCarName() {
         System.out.println(ViewConstant.INPUT_CAR_NAME.message());
     }
 

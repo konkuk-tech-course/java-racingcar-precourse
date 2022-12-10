@@ -6,9 +6,8 @@ import racingcar.view.OutputView;
 
 public class Car {
 
-
     private final String name;
-    private String trace=CarConstant.INIT_TRACE.message();
+    private String trace = CarConstant.INIT_TRACE.message();
     private int position = CarConstant.INIT_POSITION.stateNumber();
 
 
@@ -16,11 +15,12 @@ public class Car {
         this.name = name;
     }
 
-    public void MoveOrStopAccordingToRandomNumber(){
-        int number = Randoms.pickNumberInRange(CarConstant.START_RANGE.stateNumber(), CarConstant.END_RANGE.stateNumber());
-        if(number>=CarConstant.CAPABLE_MOVE_NUMBER.stateNumber()){
+    public void MoveOrStopAccordingToRandomNumber() {
+        int number = Randoms.pickNumberInRange(CarConstant.START_RANGE.stateNumber(),
+            CarConstant.END_RANGE.stateNumber());
+        if (number >= CarConstant.CAPABLE_MOVE_NUMBER.stateNumber()) {
             this.position++;
-            this.trace +=CarConstant.MOVE.message();
+            this.trace += CarConstant.MOVE.message();
         }
     }
 

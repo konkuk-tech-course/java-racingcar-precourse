@@ -1,6 +1,5 @@
 package racingcar.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import racingcar.domain.Car;
 import racingcar.domain.Game;
@@ -10,30 +9,30 @@ import racingcar.view.OutputView;
 
 public class RacingController {
 
-    private InputView inputView;
-    private OutputView outputView;
-    private Validator validator;
+    private final InputView inputView;
+    private final OutputView outputView;
+    private final Validator validator;
 
     public RacingController(InputView inputView, OutputView outputView) {
-        this.inputView=inputView;
-        this.outputView=outputView;
+        this.inputView = inputView;
+        this.outputView = outputView;
         this.validator = new Validator();
     }
 
 
-    public void run(){
+    public void run() {
         List<Car> cars = validateCarName();
-        int trial = validateInputTrial();
-        Game game = new Game(cars,trial,outputView);
+        long trial = validateInputTrial();
+        Game game = new Game(cars, trial, outputView);
         game.play();
     }
 
-    private int validateInputTrial() {
-        int trial=0;
-        try{
+    private long validateInputTrial() {
+        long trial;
+        try {
             outputView.printInputTrial();
             trial = validator.validateInputTrial(inputView.readTrial());
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             outputView.printException(e.getMessage());
             return validateInputTrial();
         }
@@ -41,11 +40,11 @@ public class RacingController {
     }
 
     private List<Car> validateCarName() {
-        List<Car> cars= new ArrayList<>();
-        try{
+        List<Car> cars;
+        try {
             outputView.printInputCarName();
             cars = validator.validateCarName(inputView.readCarName());
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             outputView.printException(e.getMessage());
             return validateCarName();
         }

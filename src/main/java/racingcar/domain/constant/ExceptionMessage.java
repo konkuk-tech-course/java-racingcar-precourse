@@ -18,6 +18,5 @@ public enum ExceptionMessage {
         return exceptionMessage;
     }
 
-    ;
 
 }

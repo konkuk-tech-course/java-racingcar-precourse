@@ -3,49 +3,49 @@ package racingcar.domain;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Stream;
 import racingcar.view.OutputView;
 
 public class Game {
+
     private OutputView outputView;
     private List<Car> cars;
     private List<String> winningMembers;
-    private int trial;
-    public Game(List<Car> cars, int trial, OutputView outputView) {
-        this.cars=cars;
-        this.trial=trial;
+    private long trial;
+
+    public Game(List<Car> cars, long trial, OutputView outputView) {
+        this.cars = cars;
+        this.trial = trial;
         this.outputView = outputView;
-        this.winningMembers =new ArrayList<>();
+        this.winningMembers = new ArrayList<>();
     }
 
-    public void play(){
-
-        for(int moveCount =0; moveCount < trial; moveCount++){
+    public void play() {
+        for (long moveCount = 0; moveCount < trial; moveCount++) {
             carMove();
         }
-        Car maximumMovedCar = findMaxCar();
+        Car maximumMovedCar = findMaxMovedCar();
         findWinners(maximumMovedCar);
         outputView.printWinningMember(winningMembers);
     }
 
     private void findWinners(Car maximumMovedCar) {
-        for(int index=0; index<cars.size(); index++){
-            if(cars.get(index).getPosition() == maximumMovedCar.getPosition()){
+        for (int index = 0; index < cars.size(); index++) {
+            if (cars.get(index).getPosition() == maximumMovedCar.getPosition()) {
                 winningMembers.add(cars.get(index).getName());
             }
         }
     }
 
-    private Car findMaxCar() {
+    private Car findMaxMovedCar() {
         Comparator<Car> comparatorByTrace = Comparator.comparingInt(car -> car.getPosition());
-        Car carWithMax = cars.stream()
+        Car maximumMovedCar = cars.stream()
             .max(comparatorByTrace)
             .orElseThrow(IllegalArgumentException::new);
-        return carWithMax;
+        return maximumMovedCar;
     }
 
     private void carMove() {
-        for(int index = 0; index<cars.size(); index++){
+        for (int index = 0; index < cars.size(); index++) {
             cars.get(index).MoveOrStopAccordingToRandomNumber();
             cars.get(index).printUntilNowPosition(outputView);
         }

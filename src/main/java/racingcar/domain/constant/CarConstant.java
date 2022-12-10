@@ -9,8 +9,7 @@ public enum CarConstant {
     CAPABLE_MOVE_NUMBER(4),
     START_RANGE(0),
     END_RANGE(9),
-    INIT_POSITION(0)
-    ;
+    INIT_POSITION(0);
 
 
     private String state;

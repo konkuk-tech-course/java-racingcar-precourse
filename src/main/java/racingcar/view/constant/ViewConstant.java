@@ -7,8 +7,7 @@ public enum ViewConstant {
     INPUT_TRIAL("시도할 회수는 몇회인가요?"),
     TRACE("%s : %s\n"),
     WINNER("최종 우승자 : "),
-    INIT_DELEMETER(",")
-    ;
+    INIT_DELEMETER(",");
 
 
     private String constant;
@@ -20,7 +19,6 @@ public enum ViewConstant {
     public String message() {
         return constant;
     }
-
 
 
 }
