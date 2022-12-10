@@ -4,15 +4,13 @@ import constant.Constants;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Game {
-    private int moveCount;
+    private int remainingMoves;
     private Map<String, Car> cars;
 
-    public Game() {
-        moveCount = Constants.INIT_VALUE.get();
+    public Game(int remainingMoves) {
+        this.remainingMoves = remainingMoves;
         cars = new HashMap<>();
     }
 
