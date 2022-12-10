@@ -43,4 +43,16 @@ public class GameController {
             return requestTryCount();
         }
     }
+
+    public void operate(Game game) {
+        while(game.hasRemainingMoves()) {
+            gameService.playRound(game);
+            outputView.printResult(gameService.findGameStatus(game));
+        }
+        finish(game);
+    }
+
+    public void finish(Game game) {
+
+    }
 }
