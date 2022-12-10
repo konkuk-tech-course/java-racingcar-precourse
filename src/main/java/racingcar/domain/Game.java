@@ -18,10 +18,12 @@ public class Game {
         cars.put(car.getName(), car);
     }
 
-    public void controlCar(String name, boolean canMove) {
-        if (canMove) {
-            cars.get(name).move();
-        }
+    public void controlCars(Map<String, Boolean> moves) {
+        remainingMoves--;
+        moves.entrySet().stream()
+                .filter(Map.Entry::getValue)
+                .map(Map.Entry::getKey)
+                .forEach(name -> cars.get(name).move());
     }
 
     public List<String> findLeadingCars() {
