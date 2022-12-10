@@ -25,6 +25,16 @@ public class ViewValidator {
         return input.length() <= InputLimits.NAME_LENGTH.get();
     }
 
+    public static void validateTryCount(String input) {
+        if (isEmpty(input)) {
+            throw new IllegalArgumentException(InputErrorMessage.EMPTY.get());
+        }
+
+        if (!isNumber(input)) {
+            throw new IllegalArgumentException(InputErrorMessage.NOT_NUMBER.get());
+        }
+    }
+
     private static boolean isNumber(String input) {
         return Pattern.matches(ValidationRegex.NUMBER.get(), input);
     }
