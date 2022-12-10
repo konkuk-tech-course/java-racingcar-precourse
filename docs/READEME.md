@@ -14,9 +14,9 @@
     - [x] 게임 상황 Map 반환 기능
 
 ## Service
-- [ ] GameService
-    - [ ] playRound 기능
-    - [ ] 게임 상황 반환 기능
+- [x] GameService
+    - [x] playRound 기능
+    - [x] 게임 상황 반환 기능
 
 ## View
 - InputView
