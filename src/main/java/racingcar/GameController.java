@@ -53,7 +53,7 @@ public class GameController {
         return tryNumber;
     }
 
-    public void validateTryNumber(String stringNumber){
+    public void validateTryNumber(String stringNumber)throws IllegalArgumentException{
         try{
             int tryNumber = Integer.parseInt(stringNumber);
             if (isNegativeNumber(tryNumber)) {

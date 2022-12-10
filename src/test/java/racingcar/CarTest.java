@@ -21,7 +21,7 @@ class CarTest {
     }
 
     @Test
-    void 전진유무_테스트(){
+    void 전진_테스트(){
         final int startRange = 0;
         final int notProcessEndRange = 4;
         final int ZERO = 0;

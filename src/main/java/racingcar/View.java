@@ -33,13 +33,18 @@ public class View {
     }
 
     public static void printWinner(List<Car> winner){
+        String resultString = getResultString(winner);
+        System.out.println(resultString);
+    }
+
+    public static String getResultString(List<Car> winner){
         String result = finalWinner;
         for(Car car : winner){
             result += car.getName();
             result += ", ";
         }
         result = result.substring(0, result.length() - 2);
-        System.out.println(result);
+        return result;
     }
 
     public static void printResultMessage(){
