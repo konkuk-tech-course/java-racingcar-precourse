@@ -47,12 +47,12 @@ public class GameController {
     public void operate(Game game) {
         while(game.hasRemainingMoves()) {
             gameService.playRound(game);
-            outputView.printResult(gameService.findGameStatus(game));
+            outputView.printResult(game.createGameStatus());
         }
         finish(game);
     }
 
     public void finish(Game game) {
-
+        outputView.printWinners(game.findLeadingCars());
     }
 }
