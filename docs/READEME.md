@@ -19,7 +19,14 @@
     - [x] 게임 상황 반환 기능
 
 ## View
-- InputView
+- [ ] InputView
+    - [ ] 자동차 이름 입력 기능
+        - [ ] 구분자 기준 String 파싱
+        - [ ] 파싱된 요소 별로 view validation 기능 구현
+        - [ ] 자동차 이름 입력 메서드 작성
+    - [ ] 시도 횟수 입력 기능
+        - [ ] 숫자 입력 검증 기능
+        - [ ] 시도 횟수 입력 메서드 작성
 - OutputView
 
 ## Controller
