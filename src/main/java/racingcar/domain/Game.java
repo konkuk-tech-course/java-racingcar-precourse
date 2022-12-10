@@ -8,7 +8,6 @@ import racingcar.Car;
 import racingcar.view.OutputView;
 
 public class Game {
-
     OutputView outputView;
     List<Car> cars;
     List<String> winningMember;
@@ -21,7 +20,6 @@ public class Game {
     }
 
     public void play(){
-        int max=-999;
         for(int i =0; i < trial; i++){
             carSetting();
         }
@@ -31,7 +29,12 @@ public class Game {
             .max(comparatorByTrace)
             .orElseThrow(NoSuchElementException::new);
 
-
+        for(int i=0; i<cars.size(); i++){
+            if(cars.get(i).getPosition() == carWithMax.getPosition()){
+                winningMember.add(cars.get(i).getName());
+            }
+        }
+        outputView.printWinningMember(winningMember);
     }
 
     private void carSetting() {
@@ -41,4 +44,7 @@ public class Game {
         }
         System.out.println();
     }
+
+
+
 }

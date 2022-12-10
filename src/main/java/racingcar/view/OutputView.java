@@ -1,5 +1,6 @@
 package racingcar.view;
 
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,5 +23,11 @@ public class OutputView {
         System.out.println(name + " : " + trace);
     }
 
+
+    public void printWinningMember(List<String> winningMember) {
+        String collect = winningMember.stream().collect(Collectors.joining(","));
+        System.out.print("최종 우승자 : ");
+        System.out.println(collect);
+    }
 
 }

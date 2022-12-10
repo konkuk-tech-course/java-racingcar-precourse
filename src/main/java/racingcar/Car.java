@@ -8,14 +8,9 @@ public class Car {
     private int position = 0;
     private String trace ="";
 
-    public String getName() {
-        return name;
-    }
-
     public Car(String name) {
         this.name = name;
     }
-
 
     // 추가 기능 구현
 
@@ -32,6 +27,10 @@ public class Car {
     }
 
     public int getPosition() {
-        return position;
+        return this.position;
+    }
+
+    public String getName() {
+        return this.name;
     }
 }
