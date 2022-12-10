@@ -7,10 +7,11 @@ import java.util.List;
 
 public class Game {
     private int moveCount;
-    private List<Car> Cars;
+    private List<Car> cars;
 
     public Game() {
         moveCount = Constants.INIT_VALUE.get();
-        Cars = new ArrayList<>();
+        cars = new ArrayList<>();
+    }
     }
 }
