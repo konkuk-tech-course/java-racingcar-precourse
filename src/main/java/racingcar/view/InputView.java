@@ -4,7 +4,9 @@ import camp.nextstep.edu.missionutils.Console;
 import racingcar.view.constant.InputPhrase;
 import racingcar.view.constant.InputProperties;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class InputView {
     private static class InstanceHolder {
@@ -24,6 +26,10 @@ public class InputView {
     }
 
     private List<String> parseNamesInput(String input) {
-        return List.of(input.split(InputProperties.DELIMITER.get()));
+        return Arrays.stream(input.split(InputProperties.DELIMITER.get()))
+                .map(String::trim)
+                .collect(Collectors.toList());
+    }
+
     }
 }
