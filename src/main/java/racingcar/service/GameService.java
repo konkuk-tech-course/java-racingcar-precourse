@@ -32,4 +32,7 @@ public class GameService {
         return randomValue >= MoveConditionProperties.MIN_MOVABLE.get();
     }
 
+    public Map<String, Integer> findGameStatus(Game game) {
+        return game.createGameStatus();
+    }
 }
