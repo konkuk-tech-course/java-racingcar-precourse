@@ -3,7 +3,6 @@ package racingcar.ui;
 import camp.nextstep.edu.missionutils.Console;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import racingcar.domain.validator.NameValidator;
 import racingcar.domain.validator.TrialValidator;
@@ -34,15 +33,15 @@ public class InputView {
     private boolean checkCarName(String carNames){
         try{
             nameValidator.validate(carNames);
+            return true;
         }catch (IllegalArgumentException ie){
             out.printMessage(ie.getMessage());
             return false;
         }
-        return true;
     }
 
     public int getTrial(){
-        out.printMessage(Command.REQUEST_NAME.getMessage());
+        out.printMessage(Command.REQUEST_TRIAL.getMessage());
         String trialInput;
         do{
             trialInput = Console.readLine();
@@ -57,5 +56,10 @@ public class InputView {
             return false;
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+        InputView in = new InputView(new OutputView());
+        System.out.println(in.getCarNames());
     }
 }

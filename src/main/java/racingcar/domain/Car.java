@@ -1,6 +1,5 @@
 package racingcar.domain;
 
-import racingcar.util.Moving;
 
 public class Car {
     private final String name;
@@ -11,10 +10,14 @@ public class Car {
     }
 
     // 추가 기능 구현
-    public void go(){
-        this.position += Moving.GO.getValue();
+    public void move(int moving){
+        this.position += moving;
     }
-    public void stop(){
-        this.position += Moving.STOP.getValue();
+
+    public String getCarName(){
+        return name;
+    }
+    public int getPosition(){
+        return position;
     }
 }

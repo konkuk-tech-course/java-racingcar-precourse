@@ -5,7 +5,7 @@ public enum Command {
     REQUEST_TRIAL("시도할 회수는 몇회인가요?"),
     EXECUTE_MESSAGE("실행 결과"),
     WINNER_MESSAGE("최종 우승자"),
-    EMPTY_LINE("\n");
+    EMPTY_LINE("");
 
     private final String command ;
 
